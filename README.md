@@ -29,19 +29,11 @@ Este projeto foi construído utilizando o ecossistema Ruby:
 * **Frontend**: HTML5, CSS3 (com Flexbox/Grid) e JavaScript (AJAX/Fetch API)
 * **Ícones**: [Font Awesome](https://fontawesome.com/)
 
----
-
-## 📸 Preview
-
-[Insira aqui uma imagem do seu blog]
-
----
-
 ## 👨‍💻 Sobre o Desenvolvedor
 
 **Alisson Mendes**
 * Entusiasta de Ruby e desenvolvimento backend.
-* Conecte-se comigo no [GitHub](https://github.com/SEU_USUARIO) para acompanhar meu código.
+* Conecte-se comigo no [GitHub](https://github.com/alisson-mendes-dev/) para acompanhar meu código.
 
 ---
 
