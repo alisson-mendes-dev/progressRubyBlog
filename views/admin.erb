@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Painel Admin | ProgressBlog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="header-content">
+      <span class="logo">ProgressBlog/admin</span>
+      <nav>
+        <a href="/logout" class="btn-logout">Sair</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+        <h1>Gerenciar Posts</h1>
+
+        <div>
+        <a href="/" class="btn-logout" style="margin-right: 20px;">← Ver Blog</a>
+         <a href="/admin/posts/new" class="btn-primary" style="text-decoration:none;">+ Novo Post</a>
+
+      </div>
+      </div>
+
+      <table style="width:100%; border-collapse: collapse; margin-top: 10px;">
+        <thead>
+          <tr style="text-align: left; color: var(--text-muted); border-bottom: 1px solid var(--border-color);">
+            <th style="padding: 10px;">Título</th>
+            <th style="padding: 10px;">Ações</th>
+          </tr>
+        </thead>
+       <tbody>
+  <% Post.all.each do |post| %> <tr style="border-bottom: 1px solid var(--border-color);">
+      <td style="padding: 15px;"><%= post.titulo %></td>
+      <td style="padding: 15px;">
+        <a href="/admin/posts/<%= post.id %>/edit" style="color: var(--text-main); margin-right: 15px;">Editar</a>
+        
+        <form action="/admin/posts/<%= post.id %>/delete" method="post" style="display:inline;">
+          <button type="submit" style="background:none; border:none; color: var(--ruby-red); cursor:pointer; font-size: 1rem;">Excluir</button>
+        </form>
+      </td>
+    </tr>
+  <% end %>
+</tbody>
+      </table>
+    </div>
+  </main>
+
+</body>
+</html>

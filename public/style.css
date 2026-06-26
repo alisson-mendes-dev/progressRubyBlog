@@ -1,0 +1,121 @@
+/* Imports de Fontes - Sofisticação Editorial */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,600;1,600&display=swap');
+
+:root {
+  --ruby-red: #cc342d;
+  --ruby-red-hover: #e63a32;
+  --ruby-glow: rgba(204, 52, 45, 0.4);
+  --bg-color: #0c0a0a;
+  --card-bg: #161313;
+  --text-main: #e8e6e6;
+  --text-muted: #9e9595;
+  --border-color: #2b2222;
+  --input-bg: #080606;
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-color);
+  background-image: radial-gradient(circle at top center, #1a1212 0%, var(--bg-color) 100%);
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Header Estilizado */
+.admin-header {
+  background: rgba(12, 10, 10, 0.95);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  backdrop-filter: blur(8px);
+}
+.header-content { max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+
+.logo { font-family: var(--font-heading); font-size: 1.8rem; color: var(--ruby-red); text-shadow: 0 0 10px var(--ruby-glow); }
+
+/* Containers e Cards */
+.container { max-width: 960px; margin: 40px auto; padding: 20px; }
+
+.card, .login-box {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  border-top: 4px solid var(--ruby-red);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+}
+
+h1, h2 { font-family: var(--font-heading); color: #fff; }
+
+/* Grid de Posts */
+.posts-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 30px; }
+
+.card p { color: var(--text-muted); font-size: 0.95rem; }
+
+/* Formulários */
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase; margin-bottom: 8px; }
+input, textarea { 
+  width: 100%; padding: 14px; background: var(--input-bg); color: #fff; 
+  border: 1px solid var(--border-color); border-radius: 6px; box-sizing: border-box; 
+}
+input:focus, textarea:focus { border-color: var(--ruby-red); outline: none; box-shadow: 0 0 10px var(--ruby-glow); }
+
+/* Botões */
+.btn-primary { 
+  background: var(--ruby-red); color: #fff; padding: 12px 24px; border: none; 
+  border-radius: 6px; cursor: pointer; transition: 0.3s; font-weight: 600;
+}
+.btn-primary:hover { background: var(--ruby-red-hover); transform: translateY(-2px); }
+
+.btn-logout { color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+.btn-logout:hover { color: var(--ruby-red); }
+
+/* Login Page */
+.login-page { display: flex; align-items: center; justify-content: center; min-height: 100vh; }
+.login-container { width: 100%; max-width: 400px; padding: 20px; }
+
+.pagination a {
+  text-decoration: none;
+}
+
+/* Opcional: Estilo para botão "Anterior" ser mais suave que o "Próxima" */
+.pagination a:first-child:not(:last-child) {
+  background: var(--border-color);
+}
+
+.post-meta {
+  display: flex;
+  gap: 10px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.post-meta strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.card h1 {
+  margin-top: 0;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-color); /* Linha divisória sutil */
+  margin-bottom: 25px;
+}
+
+table {
+  border-collapse: separate !important;
+  border-spacing: 0 10px; /* Cria um "espaço" entre as linhas da tabela */
+}
+td {
+  padding: 20px !important;
+  background: var(--bg-color); /* Cria um contraste da linha com o fundo do card */
+  border-radius: 6px;
+}
+
+.btn-edit { color: #61dafb; } /* Azul suave para editar */
+.btn-delete { color: var(--ruby-red); } /* Mantenha o vermelho apenas para deletar */

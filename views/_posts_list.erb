@@ -1,0 +1,7 @@
+<% @posts.each do |post| %>
+  <article class="card">
+    <h2><%= post.titulo %></h2>
+    <p><%= post.conteudo[0..150] %>...</p>
+    <a href="/posts/<%= post.id %>" class="btn-primary">Ler mais</a>
+  </article>
+<% end %>

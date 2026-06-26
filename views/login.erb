@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Login | ProgressBlog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="login-page">
+
+  <div class="login-container">
+    <div class="login-box">
+      <h1>Login</h1>
+      <p class="subtitle">Acesse o painel administrativo</p>
+      
+      <form action="/login" method="post">
+        <div class="input-group">
+          <label>Usuário</label>
+          <input type="text" name="username" required>
+        </div>
+        <div class="input-group">
+          <label>Senha</label>
+          <input type="password" name="password" required>
+        </div>
+        <button type="submit" class="btn-primary">Entrar</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>ProgressBlog.com</title>
+  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="header-content">
+      <span class="logo">ProgressBlog.com</span>
+      <nav>
+        <a href="https://github.com/alisson-mendes-dev" target="_blank" style="margin-right: 15px; color: var(--text-main); font-size: 1.2rem;">
+    <i class="fab fa-github"></i>
+  </a>
+        <a href="/login" class="btn-logout">Portal Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>Postagens Recentes</h1>
+
+    <input type="text" id="search-input" placeholder="Digite para buscar um conteúdo através do titulo...">
+
+<div id="posts-container" class="posts-grid">
+  </div>
+</form>
+    
+    <div class="posts-grid">
+      <% if @posts && @posts.any? %>
+        <% @posts.each do |post| %>
+        
+        <article class="card">
+  <h2><%= post.titulo %></h2>
+  
+  <div class="post-meta">
+    <span>Por: <strong>Alisson Mendes</strong></span>
+    <span>•</span>
+<span><%= post.created_at ? post.created_at.strftime("%d/%m/%Y às %H:%M") : "Data indisponível" %></span>
+  </div>
+
+  <p><%= post.conteudo ? post.conteudo[0..150] : "" %>...</p>
+  
+  <% if post.referencia && !post.referencia.empty? %>
+    <span class="ref-text">Fonte: <%= post.referencia %></span>
+  <% end %>
+
+  <a href="/posts/<%= post.id %>" class="btn-primary">Ler mais</a>
+</article>
+
+
+        <% end %>
+      <% else %>
+        <p style="color: var(--text-muted);">Nenhum post encontrado.</p>
+      <% end %>
+    </div>
+
+    <div class="pagination" style="margin-top: 40px; display: flex; justify-content: center; gap: 10px;">
+  
+  <% if @page > 1 %>
+    <a href="/?page=<%= @page - 1 %>" class="btn-primary">Anterior</a>
+  <% end %>
+
+  <span style="align-self: center; color: var(--text-muted);">
+    Página <%= @page %> de <%= @total_pages > 0 ? @total_pages : 1 %>
+  </span>
+
+  <% if @page < @total_pages %>
+    <a href="/?page=<%= @page + 1 %>" class="btn-primary">Próxima</a>
+  <% end %>
+  
+</div>
+  </main>
+
+    <script src="../../admin.js"></script>
+</body>
+</html>

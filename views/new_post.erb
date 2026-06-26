@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Novo Post | ProgressBlog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <header class="admin-header">
+    <div class="header-content">
+      <span class="logo">ProgressBlog</span>
+      <a href="/admin" class="btn-logout">Voltar ao Painel</a>
+    </div>
+  </header>
+
+<main class="container">
+  <div class="card"> <h1>Criar Novo Post</h1>
+    <form action="/admin/posts" method="post">
+      
+      <div class="input-group">
+        <label>Título</label>
+        <input type="text" name="titulo" required>
+      </div>
+
+      <div class="input-group">
+        <label>Conteúdo</label>
+        <textarea name="conteudo" rows="10"></textarea> </div>
+
+      <div class="input-group">
+        <label>Referência</label>
+        <input type="text" name="referencia">
+      </div>
+
+      <button type="submit" class="btn-primary">Publicar</button>
+    </form>
+  </div>
+</main>
+
+</body>
+</html>
