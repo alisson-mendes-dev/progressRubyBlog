@@ -3,3 +3,12 @@ development:
     default:
       uri: <%= ENV['MONGO_URI'] %>
 
+test:
+  clients:
+    default:
+      uri: <%= ENV['MONGO_URI'] %>
+
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGO_URI'] %>
