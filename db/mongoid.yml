@@ -1,6 +1,5 @@
 development:
   clients:
     default:
-      uri: "mongodb+srv://soldiyoung_db_user:Cool3210@cluster0.pyqv7la.mongodb.net/meuBlog?authSource=admin&retryWrites=true&w=majority"
-
+      uri: <%= ENV['MONGO_URI'] %>
 

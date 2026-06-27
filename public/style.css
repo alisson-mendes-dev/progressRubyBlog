@@ -119,3 +119,14 @@ td {
 
 .btn-edit { color: #61dafb; } /* Azul suave para editar */
 .btn-delete { color: var(--ruby-red); } /* Mantenha o vermelho apenas para deletar */
+
+.back-link {
+  color: var(--text-muted); /* Ou a cor que preferir */
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.back-link:hover {
+  color: var(--ruby-red); /* Cor de destaque ao passar o mouse */
+}

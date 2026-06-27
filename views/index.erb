@@ -20,45 +20,24 @@
     </div>
   </header>
 
-  <main class="container">
-    <h1>Postagens Recentes</h1>
+<main class="container">
+  <h1>Postagens Recentes</h1>
 
-    <input type="text" id="search-input" placeholder="Digite para buscar um conteúdo através do titulo...">
+  <input type="text" id="search-input" placeholder="Digite para buscar...">
 
-<div id="posts-container" class="posts-grid">
-  </div>
-</form>
-    
-    <div class="posts-grid">
-      <% if @posts && @posts.any? %>
-        <% @posts.each do |post| %>
-        
+  <div id="posts-container" class="posts-grid">
+    <% if @posts && @posts.any? %>
+      <% @posts.each do |post| %>
         <article class="card">
-  <h2><%= post.titulo %></h2>
-  
-  <div class="post-meta">
-    <span>Por: <strong>Alisson Mendes</strong></span>
-    <span>•</span>
-<span><%= post.created_at ? post.created_at.strftime("%d/%m/%Y às %H:%M") : "Data indisponível" %></span>
+          <h2><%= post.titulo %></h2>
+          <p><%= post.conteudo.length > 200 ? post.conteudo[0..300] + "..." : post.conteudo %></p>
+          <a href="/posts/<%= post.id %>" class="btn-primary">Ler mais</a>
+        </article>
+      <% end %>
+    <% end %>
   </div>
 
-  <p><%= post.conteudo ? post.conteudo[0..150] : "" %>...</p>
-  
-  <% if post.referencia && !post.referencia.empty? %>
-    <span class="ref-text">Fonte: <%= post.referencia %></span>
-  <% end %>
-
-  <a href="/posts/<%= post.id %>" class="btn-primary">Ler mais</a>
-</article>
-
-
-        <% end %>
-      <% else %>
-        <p style="color: var(--text-muted);">Nenhum post encontrado.</p>
-      <% end %>
-    </div>
-
-    <div class="pagination" style="margin-top: 40px; display: flex; justify-content: center; gap: 10px;">
+<div class="pagination" style="margin-top: 40px; display: flex; justify-content: center; gap: 10px;">
   
   <% if @page > 1 %>
     <a href="/?page=<%= @page - 1 %>" class="btn-primary">Anterior</a>
@@ -73,7 +52,8 @@
   <% end %>
   
 </div>
-  </main>
+
+</main>
 
     <script src="../../admin.js"></script>
 </body>

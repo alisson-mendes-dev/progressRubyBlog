@@ -16,18 +16,15 @@ end
 
 get '/posts/:id' do
 
-  id_post = params[:id]
-  post_encontrado = Post.find(id_post)
-
-  post_encontrado.to_json
-
+# Busca o post ou gera erro 404 automaticamente se não encontrar
+  @post = Post.find(params[:id])
+  
+  # Renderiza a view show.erb, passando a variável @post
+  erb :show
+  
 rescue Mongoid::Errors::DocumentNotFound
-
   status 404
-
-  {
-    erro: "Post não encontrado"
-  }.to_json
+  "Post não encontrado." # Ou renderize uma página de erro 404
 
 end
 

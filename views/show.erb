@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title><%= @post.titulo %> | ProgressBlog</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <span class="logo">ProgressBlog</span>
+      <a href="/" class="back-link">Voltar</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <article class="card">
+      <h1><%= @post.titulo %></h1>
+      <p style="color: var(--text-muted);">
+        Publicado em: <%= @post.created_at.strftime("%d/%m/%Y") %>
+      </p>
+      
+      <div class="content" style="margin-top: 20px; line-height: 1.6;">
+        <%= @post.conteudo %>
+      </div>
+      
+      <hr style="margin: 20px 0; border: 0; border-top: 1px solid var(--border-color);">
+      
+      <% if @post.referencia && !@post.referencia.empty? %>
+        <p><strong>Referência:</strong> 
+          <a href="<%= @post.referencia %>" target="_blank" style="color: var(--text-main);">
+            <%= @post.referencia %>
+          </a>
+        </p>
+      <% end %>
+    </article>
+  </main>
+</body>
+</html>

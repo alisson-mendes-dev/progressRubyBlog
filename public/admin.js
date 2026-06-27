@@ -2,15 +2,15 @@ const input = document.getElementById('search-input');
 const container = document.getElementById('posts-container');
 
 input.addEventListener('input', () => {
-  const query = input.value.trim(); // .trim() remove espaços vazios acidentais
+  const query = input.value.trim();
 
-  // Se o campo estiver vazio, busca por todos os posts (string vazia)
-  // Isso garante que ele "volte a exibir todos"
+  // Se o campo estiver vazio, você pode querer recarregar a página
+  // ou buscar todos novamente para restaurar o estado original
   fetch(`/search?q=${encodeURIComponent(query)}`)
     .then(response => response.text())
     .then(html => {
-      // O "=" substitui todo o conteúdo antigo pelo novo,
-      // eliminando a duplicação dos cards.
+      // Como agora só existe um "posts-container", 
+      // o innerHTML substituirá apenas o que está dentro dele.
       container.innerHTML = html;
     })
     .catch(error => console.error('Erro na busca:', error));
