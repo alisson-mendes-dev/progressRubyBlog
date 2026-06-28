@@ -6,7 +6,7 @@ require 'dotenv/load'
 Mongoid.load!(
   File.join(
     File.dirname(__FILE__),
-    'db',
+    'config',
     'mongoid.yml'
   )
 )
