@@ -62,7 +62,7 @@ end
   end
 
 # No seu controller (ex: admin_controller.rb)
-get '/admin/posts/:id/edit' do
+get '/admin/posts/:id/edit' do 
   authenticate! # Garante que só admin acesse
   @post = Post.find(params[:id]) # Busca o post pelo ID da URL
   erb :edit # Carrega o arquivo edit.erb que criamos acima
