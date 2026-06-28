@@ -3,13 +3,7 @@ require 'mongoid'
 require 'json'
 require 'dotenv/load'
 
-Mongoid.load!(
-  File.join(
-    File.dirname(__FILE__),
-    'config',
-    'mongoid.yml'
-  )
-)
+Mongoid.load!("config/mongoid.yml", :production)
 
 enable :sessions
 enable :method_override  
