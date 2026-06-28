@@ -2,3 +2,5 @@ production:
   clients:
     default:
       uri: <%= ENV['MONGO_URI'] %>
+      options:
+        server_selection_timeout: 5
